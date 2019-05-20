@@ -7,19 +7,39 @@
   font-size: 30px;
   background-color: #2196f3;
 }
+
+.link-container {
+  width: 100px;
+  text-align: center;
+  box-sizing: border-box;
+  border-right: 1px solid rgb(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+#user-link {
+  margin-left: auto;
+  border-left: 1px solid rgb(255, 255, 255, 0.2);
+}
+
 .link {
   padding: 10px;
-  margin: 20px;
   color: white;
   text-decoration: none;
   opacity: .7;
+
 }
 
-.link:hover {
+.link-container:hover .link {
   transition: 300ms;
   opacity: 1;
-  margin: 20px;
+}
+.selected {
   color: white;
   text-decoration: none;
+  opacity: 1;
+}
+
+#user-link {
+  margin-left: auto;
 }
 
