@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+input,
+textarea {
+  margin: 0 auto;
+  background-color: rgb(241, 242, 246);
+  color: rgb(47, 53, 66);
+  display: block;
+  font-weight: 400;
+  top: 20px;
+  margin-bottom: 10px;
+  opacity: 1;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 8px;
+  outline: none;
+  padding: 1em 90px;
+  font-family: 'Open Sans', sans-serif;
+  transition: all 0.25s ease 0s;
+}
+
+p {
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.submit-btn {
+  background: #025ea8;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 60px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-size: 17px;
+  padding: 6px 135px;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+
+.submit-btn:hover {
+  background: #389ff1;
+}
