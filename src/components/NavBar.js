@@ -10,7 +10,7 @@ import '../styles/navBar.css'
 
 const NavBar = () => {
   return (
-    <div>
+    <div className="nav-bar">
       <AppBar>
         <Toolbar>
           <IconButton color="inherit">
