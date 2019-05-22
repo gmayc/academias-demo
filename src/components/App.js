@@ -6,12 +6,14 @@ import Form from './Form';
 import User from './User';
 import Home from './Home';
 import '../styles/app.css'
+import NavBar from './NavBar';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <SimpleNavBar/>
+      <NavBar/>
+        {/* <SimpleNavBar/> */}
         <div className="main-container">
         <Route exact path="/" component={Home}/>
           <Route path="/text" component={Text}/>
