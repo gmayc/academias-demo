@@ -13,11 +13,11 @@ const NavBar = () => {
     <div className="nav-bar">
       <AppBar>
         <Toolbar>
-          <IconButton color="inherit">
-            <NavLink to='/' className="link"  activeClassName="selected">
+          <NavLink to='/' className="link"  activeClassName="selected">
+            <IconButton color="inherit">
               <MenuIcon/>
-            </NavLink>
-          </IconButton>
+            </IconButton>
+          </NavLink>
           <NavLink to="/text" className="link" activeClassName="selected">
             <Button color="inherit">Text</Button>
           </NavLink>
