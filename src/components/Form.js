@@ -11,12 +11,29 @@ const submitButtonStyle = {
 
 class Form extends Component {
   state = {
-
+    title: '',
+    subtitle: '',
+    shortDescription: '',
+    description: '', 
   }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.handleText(this.state)
+    this.props.history.push('/text')
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+
   render(){
     return (
       <div className="form-container">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <h3>React Academy</h3>
           <p>Let us know your experience in the academy, hope you had a blast!</p>
           <div className="text-field">
@@ -24,7 +41,9 @@ class Form extends Component {
               fullWidth 
               multiline
               name="title" 
-              label="Title" 
+              label="Title"
+              value={this.state.title} 
+              onChange={this.handleChange}
               required 
             />
           </div>
@@ -34,6 +53,8 @@ class Form extends Component {
               multiline 
               name="subtitle" 
               label="Subtitle" 
+              value={this.state.subtitle} 
+              onChange={this.handleChange}
               required 
             />
           </div>
@@ -41,8 +62,10 @@ class Form extends Component {
             <TextField
               fullWidth
               multiline 
-              name="sub-subtitle" 
-              label="Moto" 
+              name="shortDescription" 
+              label="Short Description" 
+              value={this.state.shortDescription} 
+              onChange={this.handleChange}
               required 
             />
           </div>
@@ -51,7 +74,10 @@ class Form extends Component {
               fullWidth
               multiline 
               rows="4" 
+              name="description" 
               label="Description" 
+              value={this.state.description} 
+              onChange={this.handleChange}
               required 
             />
           </div>

@@ -13,14 +13,21 @@ const textStyle = {
   marginBottom: '30px'
 }
 
-const Text = () => {
+const Text = (props) => {
+  const {
+    title,
+    subtitle,
+    shortDescription,
+    description
+  } = props.text
+
   return (
     <div>
       <Paper style={papaerStyle}>
-        <Typography style={textStyle} variant='h3'>Lorem Ipsum</Typography>
-        <Typography style={textStyle} variant='h5'>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</Typography>
-        <Typography style={textStyle} variant='h6'>"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</Typography>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio lacus, euismod id iaculis sed, varius ac neque. Pellentesque iaculis massa non ligula pellentesque, ac dignissim justo dapibus. Pellentesque sagittis scelerisque ligula et tristique. Vivamus ut tellus ultricies, placerat neque dictum, imperdiet eros. Vestibulum viverra nec nibh eu mollis. Integer aliquam velit at enim luctus, in venenatis ipsum placerat. Donec aliquet, erat laoreet lobortis placerat, sapien ante mattis mauris, eu euismod odio dui non sapien.</p>
+        <Typography style={textStyle} variant='h3'>{title ? title : 'Title'}</Typography>
+        <Typography style={textStyle} variant='h5'>"{subtitle ? subtitle: 'Subtitle'}"</Typography>
+        <Typography style={textStyle} variant='h6'>"{shortDescription ? shortDescription: 'Short Description'}"</Typography>
+        <p>{description ? description : 'Description'}</p>
       </Paper>
     </div>
   )

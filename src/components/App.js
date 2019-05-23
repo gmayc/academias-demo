@@ -10,6 +10,13 @@ import NavBar from './NavBar';
 class App extends Component {
 
   state = {
+    text: {}
+  }
+
+  handleText = (text) => {
+    this.setState({
+      text: text
+    })
     
   }
 
@@ -20,8 +27,8 @@ class App extends Component {
           <NavBar/>
           <div className="main-container">
           <Route exact path="/" component={Home}/>
-            <Route path="/text" component={Text}/>
-            <Route path="/form" component={Form}/>
+            <Route path="/text" render={(props)=> <Text text={this.state.text} {...props}/>}/>
+            <Route path="/form" render={(props) => <Form handleText={this.handleText} {...props}/>}/>
             <Route path="/user" component={User}/>
           </div>
         </Router>
