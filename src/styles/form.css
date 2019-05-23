@@ -2,25 +2,16 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
-input,
-textarea {
-  margin: 0 auto;
-  background-color: rgb(241, 242, 246);
-  color: rgb(47, 53, 66);
-  display: block;
-  font-weight: 400;
-  top: 20px;
-  margin-bottom: 10px;
-  opacity: 1;
-  border-width: initial;
-  border-style: none;
-  border-color: initial;
-  border-image: initial;
-  border-radius: 8px;
-  outline: none;
-  padding: 1em 90px;
-  font-family: 'Open Sans', sans-serif;
-  transition: all 0.25s ease 0s;
+
+.text-field {
+  margin-bottom: 40px;
+}
+
+.form-container {
+  width: 400px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 p {
@@ -30,7 +21,7 @@ p {
 }
 
 .submit-btn {
-  background: #025ea8;
+  background: #3f51b5;
   color: #fff;
   border: none;
   position: relative;

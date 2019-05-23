@@ -1,10 +1,13 @@
 import React from 'react'
-import AppBar from '@material-ui/core/AppBar'
-import Typography from '@material-ui/core/Typography'
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Button from '@material-ui/core/Button';
+import { 
+  Icon,
+  IconButton,
+  Button, 
+  AppBar,
+  Typography,
+  Toolbar 
+} from '@material-ui/core'
+import { AccountCircle, HomeRounded } from '@material-ui/icons';
 import { NavLink } from 'react-router-dom'
 import '../styles/navBar.css'
 
@@ -15,7 +18,7 @@ const NavBar = () => {
         <Toolbar>
           <NavLink to='/' className="link"  activeClassName="selected">
             <IconButton color="inherit">
-              <MenuIcon/>
+              <HomeRounded/>
             </IconButton>
           </NavLink>
           <NavLink to="/text" className="link" activeClassName="selected">
@@ -24,8 +27,10 @@ const NavBar = () => {
           <NavLink to="/form" className="link" activeClassName="selected">
             <Button color="inherit">Form</Button>
           </NavLink>
-          <NavLink to="/user" className="link" activeClassName="selected">
-            <Button color="inherit">User</Button>
+          <NavLink to="/user" className="link" id='user-link' activeClassName="selected">
+            <IconButton color="inherit">
+              <AccountCircle/>
+            </IconButton>
           </NavLink>
         </Toolbar>
       </AppBar>
