@@ -6,6 +6,7 @@ import User from './User';
 import Home from './Home';
 import '../styles/app.css'
 import NavBar from './NavBar';
+import Search from './Search';
 
 class App extends Component {
 
@@ -29,10 +30,10 @@ class App extends Component {
           <Route exact path="/" component={Home}/>
             <Route path="/text" render={(props)=> <Text text={this.state.text} {...props}/>}/>
             <Route path="/form" render={(props) => <Form handleText={this.handleText} {...props}/>}/>
+            <Route path="/search" component={Search}/>
             <Route path="/user" component={User}/>
           </div>
         </Router>
-
       </div>
     )
   };

@@ -24,10 +24,10 @@ const Text = (props) => {
   return (
     <div>
       <Paper style={papaerStyle}>
-        <Typography style={textStyle} variant='h3'>{title ? title : 'Title'}</Typography>
-        <Typography style={textStyle} variant='h5'>"{subtitle ? subtitle: 'Subtitle'}"</Typography>
-        <Typography style={textStyle} variant='h6'>"{shortDescription ? shortDescription: 'Short Description'}"</Typography>
-        <p>{description ? description : 'Description'}</p>
+        <Typography style={textStyle} variant='h3'>{title || 'Title'}</Typography>
+        <Typography style={textStyle} variant='h5'>"{subtitle || 'Subtitle'}"</Typography>
+        <Typography style={textStyle} variant='h6'>"{shortDescription || 'Short Description'}"</Typography>
+        <p>{description || 'Description'}</p>
       </Paper>
     </div>
   )

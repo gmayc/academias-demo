@@ -1,13 +1,11 @@
 import React from 'react'
 import { 
-  Icon,
   IconButton,
   Button, 
   AppBar,
-  Typography,
   Toolbar 
 } from '@material-ui/core'
-import { AccountCircle, HomeRounded } from '@material-ui/icons';
+import { AccountCircle, HomeRounded, SearchRounded } from '@material-ui/icons';
 import { NavLink } from 'react-router-dom'
 import '../styles/navBar.css'
 
@@ -26,6 +24,11 @@ const NavBar = () => {
           </NavLink>
           <NavLink to="/form" className="link" activeClassName="selected">
             <Button color="inherit">Form</Button>
+          </NavLink>
+          <NavLink to="/search" className="link" id='search-link' activeClassName="selected">
+            <IconButton color="inherit">
+              <SearchRounded/>
+            </IconButton>
           </NavLink>
           <NavLink to="/user" className="link" id='user-link' activeClassName="selected">
             <IconButton color="inherit">

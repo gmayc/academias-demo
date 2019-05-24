@@ -10,6 +10,7 @@ const submitButtonStyle = {
 }
 
 class Form extends Component {
+
   state = {
     title: '',
     subtitle: '',
@@ -23,7 +24,7 @@ class Form extends Component {
     this.props.history.push('/text')
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     })
