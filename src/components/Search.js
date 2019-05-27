@@ -1,17 +1,11 @@
 import React, { Component } from 'react'
 import { 
-  Button, 
-  Typography, 
-  Link, 
-  Avatar, 
+  Button,  
   List, 
-  ListItem, 
-  ListItemAvatar, 
-  ListItemText 
 } from '@material-ui/core';
 import { SearchRounded } from '@material-ui/icons';
 import { searchGithub } from '../helpers/searchGithubHelper';
-import { ListItemEntry } from './ListItemEntry';
+import ListEntry from './ListEntry';
 
 
 class Search extends Component {
@@ -43,7 +37,7 @@ class Search extends Component {
           </Button>
         <List style={{marginLeft: 'auto', marginRight: 'auto'}}>
           {this.state.repos.map((repo, key) => (
-            <ListItemEntry repo={repo} key={key}/>
+            <ListEntry key={key} repo={repo}/>
           ))}
         </List>
       </div>
