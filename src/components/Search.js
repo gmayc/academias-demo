@@ -9,8 +9,9 @@ import {
   ListItemAvatar, 
   ListItemText 
 } from '@material-ui/core';
-import { searchGithub } from '../helpers/searchGithubHelper';
 import { SearchRounded } from '@material-ui/icons';
+import { searchGithub } from '../helpers/searchGithubHelper';
+import { ListItemEntry } from './ListItemEntry';
 
 
 class Search extends Component {
@@ -19,16 +20,21 @@ class Search extends Component {
     repos: []
   }
 
+  componentDidMount () {
+    this.handleSearch()
+  }
+
   handleSearch = () => {
-    searchGithub().then(repos => {
+    searchGithub()
+    .then(repos => {
       this.setState({
         repos: repos.data.items
       })
     })
+    .catch(err => console.log(err))
   }
 
   render() {
-
     return (
       <div style={{textAlign: 'center'}}>
         <Button color='inherit' onClick={()=> this.handleSearch()}>
@@ -37,16 +43,7 @@ class Search extends Component {
           </Button>
         <List style={{marginLeft: 'auto', marginRight: 'auto'}}>
           {this.state.repos.map((repo, key) => (
-            <Link href={repo.html_url}>
-            <ListItem key={key} button style={{paddingLeft: '40%'}}>
-              <ListItemAvatar src={repo.owner.avatar_url}>
-                <Avatar src={repo.owner.avatar_url}/>
-              </ListItemAvatar>
-                <ListItemText primary={repo.name} secondary={`Star Count: ${repo.stargazers_count}`}/>
-                <ListItemText >
-                </ListItemText>
-              </ListItem>
-              </Link>
+            <ListItemEntry repo={repo} key={key}/>
           ))}
         </List>
       </div>
